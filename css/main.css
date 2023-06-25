@@ -23,12 +23,18 @@
     
   }
 
+  main {
+    
+  }
+
 .cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   grid-template-rows: repeat( 3, 1fr);
   align-items: center;
+  width: 100%;
+
 }
 
 
