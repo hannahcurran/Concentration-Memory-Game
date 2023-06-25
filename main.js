@@ -28,7 +28,28 @@ let cards = [
         {value: 'Ace', image: './images/diamonds/diamonds-A.svg' },
         {value: 'Ace', image: './images/diamonds/diamonds-A.svg' },]
 
+let cardEls = document.querySelectorAll('.card');
+let firstGuess = null;
 
+shuffle(cards);
+
+cardEls.forEach(function (el, index) {
+        el.addEventListener('click', function( {
+                let clickedCard = cards[index]
+                el.setAttribvute('src', clickedCard.image)
+
+                if (firstGuess === null) {
+                        firstGuess = index;
+                        }else {
+                                if(cards[firstGuess].value === cards[index].value){
+                                        alert('Matched Pair!')
+                                }else {
+                                        alert('Not a Match')
+
+                                }
+                        }
+        }))
+})
 /*----- app's state (variables) - the variables that need to be global to the application and accessible to other functions we write-----*/
 //use arrays and objects
 
