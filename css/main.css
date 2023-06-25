@@ -2,8 +2,13 @@
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
     text-align:center;
-  }
+     }
   
+     body {
+      height: 100vh;
+     
+    }
+
   h1 {
     margin: 25px;
     
@@ -14,12 +19,6 @@
   }
 
   h3{
-    
-  }
-
-  body {
-    height: 100vh;
-  
     
   }
 
@@ -42,6 +41,11 @@
  button {
   padding: 4px;
   margin: 20px;
+}
+
+button:hover {
+  color: white;
+  background-color: lightcoral;
 }
 
 footer {
