@@ -14,25 +14,24 @@ const cards = [
         {value: 'Ace', image: 'css/card-library/images/diamonds/diamonds-A.svg'},
         {value: 'Ace', image: 'css/card-library/images/diamonds/diamonds-A.svg'},]
 
- let cardEls = document.querySelectorAll('.card');
-// let firstGuess = null;
+ const cardEls = document.querySelectorAll('.card');
 
-// cardEls.forEach(function (el, index) {
-//         el.addEventListener('click', function() {
-//                 let clickedCard = cards[index]
-//                 el.setAttribvute('src', clickedCard.image)
+let firstGuess = null;
 
-//                 if (firstGuess === null) {
-//                         firstGuess = index;
-//                         }else {
-//                                 if(cards[firstGuess].value === cards[index].value){
-//                                         alert('Matched Pair!')
-//                                 }else {
-//                                         alert('Not a Match')
-
-        //                         }
-        //                 }
-        // })) 
+cardEls.forEach(function (el, index) {
+        el.addEventListener('click', function() {
+                let clickedCard = cards[index]
+                el.setAttribute('src', clickedCard.image)
+                if (firstGuess === null) {
+                firstGuess = index;
+                }else {
+                if(cards[firstGuess].value === cards[index].value){
+                alert('Matched Pair!')
+                }else {
+                alert('Not a Match')
+                       }
+                       }
+        })});   
 
 /*----- app's state (variables) - the variables that need to be global to the application and accessible to other functions we write-----*/
 //use arrays and objects
@@ -45,16 +44,26 @@ const playAgainBtn = document.querySelector('button');
 playAgainBtn.addEventListener('click', init);
 
 /*----- functions -----*/
-function shuffle(array) {
-        let currentIndex= array.length, randomIndex;
-        while (currentIndex !=0){
-                randomIndex = Math.floor(Math.random()* currentIndex);
-                currentIndex--;
-             [array[currentIndex], array[randomIndex]] = [
-                array[randomIndex], array[currentIndex]];
-        
-        }
-        return array;
+
+//initialize all state then call render()
+function init(){
+
 }
 
-shuffle(cards);
+function renderCard(cb){
+//first all cards face down
+}
+
+// function shuffle(array) {
+//         let currentIndex= array.length, randomIndex;
+//         while (currentIndex !=0){
+//                 randomIndex = Math.floor(Math.random()* currentIndex);
+//                 currentIndex--;
+//              [array[currentIndex], array[randomIndex]] = [
+//                 array[randomIndex], array[currentIndex]];
+        
+//         }
+//         return array;
+// }
+
+// shuffle(cards);
