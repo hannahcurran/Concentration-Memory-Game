@@ -2,36 +2,48 @@
 
 const cards = [
         {value: '2', image: 'css/card-library/images/diamonds/diamonds-A.svg'},
+        {value: '3', image: 'css/card-library/images/diamonds/diamonds-r03.svg'},
+        {value: '4', image: 'css/card-library/images/diamonds/diamonds-r04.svg'},
         {value: '2', image: 'css/card-library/images/diamonds/diamonds-A.svg'},
-        {value: '3', image: 'css/card-library/images/diamonds/diamonds-r03.svg'},
-        {value: '3', image: 'css/card-library/images/diamonds/diamonds-r03.svg'},
-        {value: '4', image: 'css/card-library/images/diamonds/diamonds-r04.svg'},
-        {value: '4', image: 'css/card-library/images/diamonds/diamonds-r04.svg'},
         {value: '5', image: 'css/card-library/images/diamonds/diamonds-r05.svg'},
+        {value: 'Ace', image: 'css/card-library/images/diamonds/diamonds-A.svg'},
         {value: '5', image: 'css/card-library/images/diamonds/diamonds-r05.svg'},
+        {value: '4', image: 'css/card-library/images/diamonds/diamonds-r04.svg'},
         {value: '6', image: 'css/card-library/images/diamonds/diamonds-r06.svg'},
+        {value: '3', image: 'css/card-library/images/diamonds/diamonds-r03.svg'},
         {value: '6', image: 'css/card-library/images/diamonds/diamonds-r06.svg'},
         {value: 'Ace', image: 'css/card-library/images/diamonds/diamonds-A.svg'},
-        {value: 'Ace', image: 'css/card-library/images/diamonds/diamonds-A.svg'},]
+       ]
 
  const cardEls = document.querySelectorAll('.card');
 
+ //getting cards to flip over and identify if they match
+
 let firstGuess = null;
 
-cardEls.forEach(function (el, index) {
+cardEls.forEach(function (el, guess) {
         el.addEventListener('click', function() {
-                let clickedCard = cards[index]
-                el.setAttribute('src', clickedCard.image)
-                if (firstGuess === null) {
-                firstGuess = index;
-                }else {
-                if(cards[firstGuess].value === cards[index].value){
-                alert('Matched Pair!')
-                }else {
-                alert('Not a Match')
-                       }
-                       }
-        })});   
+         if(guess === firstGuess){
+                return;
+         };       
+        let clickedCard = cards[guess];
+                
+        el.setAttribute('src', clickedCard.image);
+           if (firstGuess === null) {
+            firstGuess = guess;
+            }else {
+            if(cards[firstGuess].value === cards[guess].value){
+            alert('Matched Pair!')
+            }else {
+            setTimeout(function(){
+                cardEls[firstGuess].setAttribute('src', 'css/card-library/images/red.svg');
+                cardEls[guess].setAttribute('src', 'css/card-library/images/red.svg');
+                firstGuess= null;
+                }, 0750)
+                }
+                }
+        })
+        });   
 
 /*----- app's state (variables) - the variables that need to be global to the application and accessible to other functions we write-----*/
 //use arrays and objects
@@ -51,7 +63,7 @@ function init(){
 }
 
 function renderCard(cb){
-//first all cards face down
+
 }
 
 // function shuffle(array) {
