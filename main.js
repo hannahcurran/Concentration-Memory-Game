@@ -36,15 +36,17 @@ cardEls.forEach(function (el, index) {
         }else {
             if(cards[firstGuess].value === cards[index].value){
                 messageEl.innerText = 'Match!';
+                setTimeout(function(){
+                   messageEl.innerText = ''}, 1000*0.75); //show message then disappear before next turn
                  firstGuess = null; //keep matched cards flipped over and re-set for next turn
         }else {
-                messageEl.innerText = 'No match - try again!';
-            setTimeout(function(){
+                messageEl.innerText = 'Wrong - try again!';
+                setTimeout(function(){
                 cardEls[firstGuess].setAttribute('src', 'css/card-library/images/red.svg');
                 cardEls[index].setAttribute('src', 'css/card-library/images/red.svg');
+                messageEl.innerText = ''; 
                 firstGuess= null;
-                
-                }, 1000*0.75) ;//turn both cards back if not a match
+                }, 1000*0.75);//turn both cards back if not a match
                 }
                 }
         })
@@ -71,18 +73,13 @@ const countdownEl = document.getElementById('countdown').addEventListener('click
 
 // }
 
-function render(){
-        //renderCountdown()
-        renderMessage()
-        //renderButton();
-        }
+// function render(){
+//         //renderCountdown()
+//         //renderButton();
+//         }
 
 
-// function renderMessage() {
-// if(cards[firstGuess].value === cards[index].value){
-// messageEl.innerText = 'Match!';
-// } else { 
-//         messageEl.innerText = "Try again!"
+// 
 // }
 // }
 // const countdown = 30;
