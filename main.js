@@ -18,38 +18,37 @@ const cards = [
 //getting cards to flip over and identify if they match
 
 const cardEls = document.querySelectorAll('.card');
+const messageEl = document.querySelector('h2');
 
 let firstGuess = null;
 
-cardEls.forEach(function (el, guess) {
+cardEls.forEach(function (el, index) {
         el.addEventListener('click', function() {
-         if(guess === firstGuess){
-        return; //
+         if(index === firstGuess){
+        return; // prevent same card from being clicked on twice
          };       
         
-        let clickedCard = cards[guess];
+        let clickedCard = cards[index];
                 
         el.setAttribute('src', clickedCard.image);
            if (firstGuess === null) {
-            firstGuess = guess;
-          
+            firstGuess = index;  
         }else {
-            if(cards[firstGuess].value === cards[guess].value){
-                 alert('Match!');
+            if(cards[firstGuess].value === cards[index].value){
+                messageEl.innerText = 'Match!';
                  firstGuess = null; //keep matched cards flipped over and re-set for next turn
         }else {
+                messageEl.innerText = 'No match - try again!';
             setTimeout(function(){
                 cardEls[firstGuess].setAttribute('src', 'css/card-library/images/red.svg');
-                cardEls[guess].setAttribute('src', 'css/card-library/images/red.svg');
+                cardEls[index].setAttribute('src', 'css/card-library/images/red.svg');
                 firstGuess= null;
-                }, 1000*0.75)
+                
+                }, 1000*0.75) ;//turn both cards back if not a match
                 }
                 }
         })
         });   
-
-
-
 
 /*----- app's state (variables) - the variables that need to be global to the application and accessible to other functions we write-----*/
 //use arrays and objects
@@ -72,15 +71,20 @@ const countdownEl = document.getElementById('countdown').addEventListener('click
 
 // }
 
-// function render(){
-//         renderCountdown(function(){
-//         renderResults();
-//         })
+function render(){
+        //renderCountdown()
+        renderMessage()
+        //renderButton();
+        }
+
+
+// function renderMessage() {
+// if(cards[firstGuess].value === cards[index].value){
+// messageEl.innerText = 'Match!';
+// } else { 
+//         messageEl.innerText = "Try again!"
 // }
-
-
-
-
+// }
 // const countdown = 30;
 // function countdownTimer(){
 // countdown--;
@@ -93,34 +97,18 @@ const countdownEl = document.getElementById('countdown').addEventListener('click
 
 // const timerId = setInterval(countdownTimer, 1000);
 
- function renderCountdown(cb){
-      let count = 30;
-       countdownEl.style.visibility = 'visible';
-       countdownEl.innerText = count;
-       const timerId = setInterval(function(){
-                 count --;
-                 if (count) {
-                         countdownEl.innerText = count; 
-                         }else{
-                        clearInterval(timerId);
-                         countdownEl.style.visbility= 'hidden';
-                         cb();
-                      }
-         }, 1000);
-}
-
-
-
-// function shuffle(array) {
-//         let currentIndex= array.length, randomIndex;
-//         while (currentIndex !=0){
-//                 randomIndex = Math.floor(Math.random()* currentIndex);
-//                 currentIndex--;
-//              [array[currentIndex], array[randomIndex]] = [
-//                 array[randomIndex], array[currentIndex]];
-        
-//         }
-//         return array;
+//  function renderCountdown(cb){
+//       let count = 30;
+//        countdownEl.style.visibility = 'visible';
+//        countdownEl.innerText = count;
+//        const timerId = setInterval(function(){
+//                  count --;
+//                  if (count) {
+//                          countdownEl.innerText = count; 
+//                          }else{
+//                         clearInterval(timerId);
+//                          countdownEl.style.visbility= 'hidden';
+//                          cb();
+//                       }
+//          }, 1000);
 // }
-
-// shuffle(cards);

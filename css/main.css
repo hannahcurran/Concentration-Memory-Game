@@ -16,6 +16,7 @@
 
   h2{
    font-size: 20px;
+   color: lightcoral;
   }
  
   /* trying to get countdown to be centered 
@@ -31,7 +32,8 @@
     border: 0.5vmin solid lightcoral;
     border-radius: 50%;
     font-size:5vmin;
-    color: lightgrey;  
+    color: white;  
+    background-color: lightgrey;
        
   }
 
