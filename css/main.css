@@ -5,9 +5,8 @@
     color:grey;
      }
   
-     body {
-      height: 100vh;
-     
+  body {
+    height: 100vh;
     }
 
   h1 {
@@ -18,8 +17,21 @@
   h2{
    font-size: 20px;
   }
+ 
+  /*  trying to get countdown to be centered
+   .flex-ctr { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
 
-  h3{
+  #countdown {
+    height:10vmin;
+    width: 10vmin;
+    border: 0.5vmin solid lightcoral;
+    border-radius: 50%;
+    font-size:5vmin;
+    color: lightgrey;  
     
   }
 
@@ -31,14 +43,11 @@
   grid-template-rows: repeat( 3, 1fr);
   align-items: center;
   width: 100%;
-  border: lightcoral solid;
+  border: lightcoral solid 0.5vmin;
   background:lightgrey;
   padding: 20px;
     
-  
-
-}
-
+ }
 
  button {
   padding: 4px;
