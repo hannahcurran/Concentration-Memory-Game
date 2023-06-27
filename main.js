@@ -20,6 +20,8 @@ const cards = [
 
 const cardEls = document.querySelectorAll('.card');
 const messageEl = document.querySelector('h2');
+const countdownEl = document.getElementById('timer');  
+
 
 let firstGuess = null;
 
@@ -70,101 +72,20 @@ const playAgainBtn = document.querySelector('button');
 
 // }
 
+
+
+
 //creating countdown timer 
-
-// var time_limit = 30;
-
-// var time_out = setInterval(() => {
-
-//   if(time_limit == 0) {
-    
-//     $('#timer').html('Time Over');
-        
-//   } else {
-    
-//     if(time_limit < 10) {
-//       time_limit = 0 + '' + time_limit;
-//     }
-    
-//     $('#timer').html('00:' + time_limit);
-    
-//     time_limit -= 1;
-    
-//   }
-
-// }, 1000);
-
-
-
-// const countdownTime = 30;
-// let time_out = setInterval(() => {
-//         if(countdownTime === 0){
-//                 `$(#timer).innerHTML("Time's up!)`;
-//                 } else {
-//                         `$(#timer).innerHTML('' + countdownTime)`;
-//                         // countdownTime -=1;
-//                 }
-
-// }, 1000); 
-
-
-
-
-
-
-// const countdownEl = document.getElementById('timer');
-
-// const timerId = setInterval(countdown, 1000);
-
-// function countdown(){
-//         if (countdownTime <=0){
-//             clearTimeout(timerId);
-//             messageEl.innerText = "Time's up!";
-//         } else {
-//                 h3.innerHTML = timeLeft + ' seconds remaining';
-//                 timeLeft--;
-//         }
-//       }
-
-
-// function render(){
-//         //renderCountdown()
-//         //renderButton();
-//         }
-
-
-// 
-// }
-// }
-// const countdown = 30;
-// function countdownTimer(){
-// countdown--;
-// if(countdown >= 0){
-//         console.log(countdown);
-// }else {
-//         clearInterval(timerId);
-// }
-// }
-
-
-
-
-
-
-// const timerId = setInterval(countdownTimer, 1000);
-
-//  function renderCountdown(cb){
-//       let count = 30;
-//        countdownEl.style.visibility = 'visible';
-//        countdownEl.innerText = count;
-//        const timerId = setInterval(function(){
-//                  count --;
-//                  if (count) {
-//                          countdownEl.innerText = count; 
-//                          }else{
-//                         clearInterval(timerId);
-//                          countdownEl.style.visbility= 'hidden';
-//                          cb();
-//                       }
-//          }, 1000);
-// }
+let timeSecond = 30;
+countdownEl.innerHTML = `${timeSecond}`;
+const countdown = setInterval(function() {
+        timeSecond--;
+        countdownEl.innerHTML= `${timeSecond}`; //shows countdown 
+        if(timeSecond <= 0) {
+                endTime();
+                clearInterval(countdown)
+        }
+        },1000);
+        function endTime(){
+                countdownEl.innerHTML = "Time's up!"
+             }
