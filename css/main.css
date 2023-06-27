@@ -7,26 +7,27 @@
   
   body {
     height: 100vh;
+   
+    
+   
     }
 
+    main{
+      display:flex;
+      justify-content:center;
+
+    }
   h1 {
     margin: 25px;
     font-size:60px;
-  }
+     }
 
   h2{
    font-size: 30px;
    color: lightcoral;
   }
  
-  /* trying to get countdown to be centered 
-   .flex-ctr { 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  } */
-
-  #countdown {
+  #timer {
     height:10vmin;
     width: 10vmin;
     border: 0.5vmin solid lightcoral;
@@ -34,7 +35,7 @@
     font-size:5vmin;
     color: white;  
     background-color: lightgrey;
-       
+         
   }
 
 
@@ -43,7 +44,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   grid-template-rows: repeat( 3, 1fr);
-  align-items: center;
+  justify-items:center;
   width: 100%;
   border: lightcoral solid 0.5vmin;
   background:lightgrey;
@@ -53,7 +54,8 @@
 
  button {
   padding: 4px;
-  margin: 20px;
+  margin: 10px;
+  width: 
 }
 
 /*hide button when game is in play*/

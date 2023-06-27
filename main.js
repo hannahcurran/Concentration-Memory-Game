@@ -15,6 +15,7 @@ const cards = [
         {value: 'Ace', image: 'css/card-library/images/diamonds/diamonds-A.svg'},
        ]
 
+       
 //getting cards to flip over and identify if they match
 
 const cardEls = document.querySelectorAll('.card');
@@ -59,10 +60,6 @@ cardEls.forEach(function (el, index) {
 /*----- cached element references -----*/
 const playAgainBtn = document.querySelector('button');
 
-const countdownEl = document.getElementById('countdown').addEventListener('click', function(){
-        let timeleft = 30; 
-})
-
 /*----- event listeners -----*/
 // playAgainBtn.addEventListener('click', init);
 
@@ -72,6 +69,63 @@ const countdownEl = document.getElementById('countdown').addEventListener('click
 // function init(){
 
 // }
+
+//creating countdown timer 
+
+// var time_limit = 30;
+
+// var time_out = setInterval(() => {
+
+//   if(time_limit == 0) {
+    
+//     $('#timer').html('Time Over');
+        
+//   } else {
+    
+//     if(time_limit < 10) {
+//       time_limit = 0 + '' + time_limit;
+//     }
+    
+//     $('#timer').html('00:' + time_limit);
+    
+//     time_limit -= 1;
+    
+//   }
+
+// }, 1000);
+
+
+
+// const countdownTime = 30;
+// let time_out = setInterval(() => {
+//         if(countdownTime === 0){
+//                 `$(#timer).innerHTML("Time's up!)`;
+//                 } else {
+//                         `$(#timer).innerHTML('' + countdownTime)`;
+//                         // countdownTime -=1;
+//                 }
+
+// }, 1000); 
+
+
+
+
+
+
+// const countdownEl = document.getElementById('timer');
+
+// const timerId = setInterval(countdown, 1000);
+
+// function countdown(){
+//         if (countdownTime <=0){
+//             clearTimeout(timerId);
+//             messageEl.innerText = "Time's up!";
+//         } else {
+//                 h3.innerHTML = timeLeft + ' seconds remaining';
+//                 timeLeft--;
+//         }
+//       }
+
 
 // function render(){
 //         //renderCountdown()
@@ -91,6 +145,11 @@ const countdownEl = document.getElementById('countdown').addEventListener('click
 //         clearInterval(timerId);
 // }
 // }
+
+
+
+
+
 
 // const timerId = setInterval(countdownTimer, 1000);
 
