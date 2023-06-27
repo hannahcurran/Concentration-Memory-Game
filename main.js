@@ -15,36 +15,41 @@ const cards = [
         {value: 'Ace', image: 'css/card-library/images/diamonds/diamonds-A.svg'},
        ]
 
+//getting cards to flip over and identify if they match
 
- const cardEls = document.querySelectorAll('.card');
-
- //getting cards to flip over and identify if they match
+const cardEls = document.querySelectorAll('.card');
 
 let firstGuess = null;
 
 cardEls.forEach(function (el, guess) {
         el.addEventListener('click', function() {
          if(guess === firstGuess){
-        return;
+        return; //
          };       
+        
         let clickedCard = cards[guess];
                 
         el.setAttribute('src', clickedCard.image);
            if (firstGuess === null) {
             firstGuess = guess;
-            }else {
+          
+        }else {
             if(cards[firstGuess].value === cards[guess].value){
-                alert('Matched Pair!') // need matched cards to stay turned over and next turn to begin.
-            }else {
+                 alert('Match!');
+                 firstGuess = null; //keep matched cards flipped over and re-set for next turn
+        }else {
             setTimeout(function(){
                 cardEls[firstGuess].setAttribute('src', 'css/card-library/images/red.svg');
                 cardEls[guess].setAttribute('src', 'css/card-library/images/red.svg');
                 firstGuess= null;
-                }, 0750)
+                }, 1000*0.75)
                 }
                 }
         })
         });   
+
+
+
 
 /*----- app's state (variables) - the variables that need to be global to the application and accessible to other functions we write-----*/
 //use arrays and objects
@@ -52,10 +57,13 @@ cardEls.forEach(function (el, guess) {
 
 /*----- cached element references -----*/
 const playAgainBtn = document.querySelector('button');
-const countdownEl = document.getElementById('countdown'); 
+
+const countdownEl = document.getElementById('countdown').addEventListener('click', function(){
+        let timeleft = 30; 
+})
 
 /*----- event listeners -----*/
-playAgainBtn.addEventListener('click', init);
+// playAgainBtn.addEventListener('click', init);
 
 /*----- functions -----*/
 
@@ -64,11 +72,26 @@ playAgainBtn.addEventListener('click', init);
 
 // }
 
-function render(){
-        renderCountdown(function(){
-        renderResults();
-        })
-}
+// function render(){
+//         renderCountdown(function(){
+//         renderResults();
+//         })
+// }
+
+
+
+
+// const countdown = 30;
+// function countdownTimer(){
+// countdown--;
+// if(countdown >= 0){
+//         console.log(countdown);
+// }else {
+//         clearInterval(timerId);
+// }
+// }
+
+// const timerId = setInterval(countdownTimer, 1000);
 
  function renderCountdown(cb){
       let count = 30;
@@ -85,6 +108,8 @@ function render(){
                       }
          }, 1000);
 }
+
+
 
 // function shuffle(array) {
 //         let currentIndex= array.length, randomIndex;
