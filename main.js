@@ -3,25 +3,29 @@
 const cards = [
         {value: '2', image: 'css/card-library/images/diamonds/diamonds-r02.svg'},
         {value: '3', image: 'css/card-library/images/diamonds/diamonds-r03.svg'},
+        {value: 'Queen', image: 'css/card-library/images/diamonds/diamonds-Q.svg'},
         {value: '4', image: 'css/card-library/images/diamonds/diamonds-r04.svg'},
         {value: '2', image: 'css/card-library/images/diamonds/diamonds-r02.svg'},
         {value: '5', image: 'css/card-library/images/diamonds/diamonds-r05.svg'},
+        {value: 'King', image: 'css/card-library/images/diamonds/diamonds-K.svg'},
         {value: 'Ace', image: 'css/card-library/images/diamonds/diamonds-A.svg'},
         {value: '5', image: 'css/card-library/images/diamonds/diamonds-r05.svg'},
         {value: '4', image: 'css/card-library/images/diamonds/diamonds-r04.svg'},
+        {value: 'Queen', image: 'css/card-library/images/diamonds/diamonds-Q.svg'},
         {value: '6', image: 'css/card-library/images/diamonds/diamonds-r06.svg'},
         {value: '3', image: 'css/card-library/images/diamonds/diamonds-r03.svg'},
+        {value: 'King', image: 'css/card-library/images/diamonds/diamonds-K.svg'},
         {value: '6', image: 'css/card-library/images/diamonds/diamonds-r06.svg'},
         {value: 'Ace', image: 'css/card-library/images/diamonds/diamonds-A.svg'},
        ]
 
        
-//getting cards to flip over and identify if they match
-
 const cardEls = document.querySelectorAll('.card');
 const messageEl = document.querySelector('h2');
 const countdownEl = document.getElementById('timer');  
+const start = document.getElementById('start');
 
+//getting cards to flip over and identify if they match
 
 let firstGuess = null;
 
@@ -60,7 +64,7 @@ cardEls.forEach(function (el, index) {
 
 
 /*----- cached element references -----*/
-const playAgainBtn = document.querySelector('button');
+// const playAgainBtn = document.querySelector('button');
 
 /*----- event listeners -----*/
 // playAgainBtn.addEventListener('click', init);
@@ -72,20 +76,23 @@ const playAgainBtn = document.querySelector('button');
 
 // }
 
-
-
-
 //creating countdown timer 
-let timeSecond = 30;
-countdownEl.innerHTML = `${timeSecond}`;
-const countdown = setInterval(function() {
-        timeSecond--;
-        countdownEl.innerHTML= `${timeSecond}`; //shows countdown 
-        if(timeSecond <= 0) {
+
+
+//play button to begin countdown
+let time = 30;
+start.addEventListener('click', function(){
+        let timer = 30;
+        setInterval(function(){
+                time--;
+                countdownEl.innerHTML= `${time}`; //shows countdown 
+                if(time <= 0) {
                 endTime();
                 clearInterval(countdown)
-        }
-        },1000);
-        function endTime(){
-                countdownEl.innerHTML = "Time's up!"
-             }
+                }
+                },1000);
+                function endTime(){
+                        countdownEl.innerHTML = "Time's up! Better luck next time!"
+                     }
+                })
+

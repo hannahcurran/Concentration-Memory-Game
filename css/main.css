@@ -51,8 +51,10 @@
 
  button {
   padding: 4px;
-  margin: 10px;
+  margin: 15px;
   border: lightcoral solid;
+  width: 15vmin;
+  height: 3vmin;
 }
 
 /*hide button when game is in play*/

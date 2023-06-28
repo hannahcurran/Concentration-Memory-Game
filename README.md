@@ -14,7 +14,7 @@ Concentration
 
 How the game works:
 
-There is a game board with twelve playing cards arranged randomly in a grid face down.
+There is a game board with sixteen playing cards arranged randomly in a grid face down.
 The playing cards consist of six matching pairs. 
 During each turn:
 - a player flips one card over to reveal it's number/ deck;
