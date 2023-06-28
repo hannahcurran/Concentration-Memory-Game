@@ -10,8 +10,15 @@
    
       }
 
+  section{
+    display: grid;
+    grid-template-rows: 1fr, 1fr, 1fr, 1fr;
+    margin: 20px; 
+    justify-items: center;
+  }
+
    h1 {
-    margin: 25px;
+    /* margin: 25px; */
     font-size:60px;
      }
 
@@ -49,17 +56,13 @@
     
  }
 
- button {
+ button{
   padding: 4px;
   margin: 15px;
   border: lightcoral solid;
-  width: 15vmin;
-  height: 3vmin;
-}
-
-/*hide button when game is in play*/
-.disabled {
-display: hidden; 
+  width: 10vmin;
+  height: 4vmin;
+  font-size:20px;
 }
 
 button:hover {
