@@ -1,5 +1,3 @@
-/*----- constants -----*/
-
 const cards = [
         { value: '2', image: 'css/card-library/images/diamonds/diamonds-r02.svg' },
         { value: '3', image: 'css/card-library/images/diamonds/diamonds-r03.svg' },
@@ -26,7 +24,7 @@ const countdownEl = document.getElementById('timer');
 const start = document.getElementById('start');
 
 //getting cards to flip over and identify if they match
-let time; //change back to 30 seconds for final version 
+let time; 
 let firstGuess;
 let matchCounter;
 let gameTimer;
@@ -68,26 +66,16 @@ cardEls.forEach(function (el, index) {
         })
 });
 
-/*----- app's state (variables) - the variables that need to be global to the application and accessible to other functions we write-----*/
-//use arrays and objects
 
-
-/*----- cached element references -----*/
-
-
-/*----- event listeners -----*/
-
-
-/*----- functions -----*/
 
 //initialize all state then call render()
 function init() {
-        time = 10; //change back to 30 seconds for final version 
+        time = 5; //change back to 30 seconds for final version 
         firstGuess = null;
         matchCounter = 0;
 
         cardEls.forEach((card) => card.setAttribute('src', 'css/card-library/images/red.svg'));
-        
+        shuffle(cards);
 }
 
 
@@ -120,3 +108,14 @@ function checkWinningCondition() {
                 start.innerHTML = 'Play Again!';
         }
 }
+
+function shuffle(array) {
+        for (let i = array.length - 1; i >= 0; i--) {
+                const newPosition = Math.floor((i + 1) * Math.random());
+                const temp = array[newPosition];
+                array[newPosition] = array[i];
+                array[i] = temp;
+        }
+        return array;
+}
+const shuffleCards = shuffle(cards);

@@ -3,7 +3,7 @@
     font-family: 'Josefin Sans', sans-serif;
     text-align:center;
     color:grey;
-     }
+         }
   
   body {
     height: 100vh;
@@ -25,6 +25,7 @@
   h2{
    font-size: 30px;
    color: lightcoral;
+   max-height:20vh;
   }
  
   /* #timer {
