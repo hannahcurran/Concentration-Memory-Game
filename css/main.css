@@ -12,7 +12,7 @@
 
 body {
   height: 100vh;
-  background-image: url(/css/card-library/images/ufoBackground.jpg);
+  background-image: url(./card-library/images/ufoBackground.jpg);
   background-size: cover;
 }
 
