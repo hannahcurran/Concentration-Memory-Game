@@ -3,11 +3,12 @@
   text-align: center;
   color: black;
   margin: 0;
-  padding:0;
+  padding: 0;
   font-family: 'Special Elite', cursive;
   max-height: 100%;
   max-width: 100%;
 }
+
 
 body {
   height: 100vh;
@@ -18,26 +19,26 @@ body {
 section {
   display: grid;
   grid-template-rows: 1fr, 1fr, 1fr, 1fr;
-  margin: 20px;
+  margin: 2vmin;
   justify-items: center;
 }
 
 h1 {
-  /* margin: 25px; */
-  padding:1vmin;
+  padding: 1vmin;
   font-size: 60px;
-  height: 8vh;}
+  height: 8vh;
+}
 
 h2 {
-  padding:1vmin;
+  padding: 1vmin;
   font-size: 30px;
   color: black;
   height: 5vh;
 }
 
-h3{
+h3 {
   height: 3vh;
-  padding: 5vmin;
+  padding: 3vmin;
 }
 
 .cards {
@@ -46,12 +47,7 @@ h3{
   gap: 20px;
   grid-template-rows: repeat(3, 1fr);
   justify-items: center;
-   padding: 20px;
-  /* animation-name: floating;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out; */
-  
+  padding: 20px;
 }
 
 button {
@@ -61,7 +57,7 @@ button {
   background-color: lightgrey;
   width: 10vmin;
   height: 5.5vmin;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 #start:hover {
@@ -71,8 +67,7 @@ button {
 }
 
 footer {
-  /* margin: 100px; */
-  padding: 50px;
+  padding: 3vmin;;
   text-align: center;
   font-size: 12px;
   color: lightgrey;

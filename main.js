@@ -1,3 +1,5 @@
+//constant variables
+
 const cards = [
         { value: 'hand', image: 'css/card-library/images/hand.jpg' },
         { value: 'hand', image: 'css/card-library/images/hand.jpg' },
@@ -15,28 +17,23 @@ const cards = [
         { value: 'redAlien', image: 'css/card-library/images/redAlien.jpg' },
         { value: 'scullyFace', image: 'css/card-library/images/scullyFace.jpg' },
         { value: 'scullyFace', image: 'css/card-library/images/scullyFace.jpg' },
-
-
 ]
-
-//constant variables
 const cardEls = document.querySelectorAll('.card');
 const messageEl = document.querySelector('h2');
 const countdownEl = document.getElementById('timer');
 const start = document.getElementById('start');
 
-//getting cards to flip over and identify if they match
 let time;
 let firstGuess;
 let matchCounter;
 let gameTimer;
-
 init();
 
+//to get cards to flip over and identify if they match:
 cardEls.forEach(function (el, index) {
         el.addEventListener('click', function () {
                 if (index === firstGuess) {
-                        return; // prevent same card from being clicked on twice
+                        return; 
                 };
 
                 let clickedCard = cards[index];
@@ -46,16 +43,16 @@ cardEls.forEach(function (el, index) {
                         firstGuess = index;
                 } else {
                         if (cards[firstGuess].value === cards[index].value) {
-                                matchCounter += 1; //want to add this to display on page
+                                matchCounter += 1; 
                                 messageEl.innerText = 'Match!';
                                 setTimeout(function () {
-                                        messageEl.innerText = ''
-                                }, 1000 * 0.75); //show message then disappear before next turn
+                                        messageEl.innerText = '';
+                                }, 1000 * 0.75); 
                                 firstGuess = null; //keep matched cards flipped over and re-set for next turn
                                 checkWinningCondition();
 
                         } else {
-                                messageEl.innerText = 'Wrong - try again!';
+                                messageEl.innerText = 'Wrong - try again';
                                 setTimeout(function () {
                                         cardEls[firstGuess].setAttribute('src', 'css/card-library/images/spaceship.jpg');
                                         cardEls[index].setAttribute('src', 'css/card-library/images/spaceship.jpg');
@@ -67,33 +64,26 @@ cardEls.forEach(function (el, index) {
         })
 });
 
+//functions
 
-
-//initialize all state then call render()
 function init() {
-        time = 5; //change back to 30 seconds for final version 
+        time = 60; 
         firstGuess = null;
         matchCounter = 0;
-
         cardEls.forEach((card) => card.setAttribute('src', 'css/card-library/images/spaceship.jpg'));
         shuffle(cards);
 }
-
-
 //play button which begins countdown
-
 start.addEventListener('click', function () {
         init();
-        start.style.visibility = 'hidden'; //hides play button
+        start.style.visibility = 'hidden'; 
         gameTimer = setInterval(function () {
                 time--;
-                countdownEl.innerHTML = `${time} seconds left`; //shows countdown 
-
+                countdownEl.innerHTML = `${time} seconds left`; 
                 checkWinningCondition();
         }, 1000);
 
 })
-
 
 function checkWinningCondition() {
         if (matchCounter === cards.length / 2) {
