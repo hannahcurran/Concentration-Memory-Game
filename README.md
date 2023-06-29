@@ -2,10 +2,10 @@
 
 **How this game works:** <br>
 Concentration is a memory game where images are hidden and during each turn the player is able to flip over two images. If the player flips over two matching images then the images remain visible. <br>Otherwise, the images will flip back over again and be hidden. <br>
-There is a game board with sixteen X-files themed images arranged randomly in a grid face down. The images consist of eight matching pairs.The object of the game is to flip over all of the pairs of matching images before the 60 second timer runs out. 
+There is a game board with sixteen X-files themed images arranged randomly in a grid face down. The images consist of eight matching pairs.The object of the game is to flip over all of the pairs of matching images before the 60 second timer runs out. <br>
 
 ![screenshot of concentration](https://github.com/hannahcurran/Concentration-Memory-Game/assets/122492241/1d9ef73e-5961-4553-851d-28d0bca0856f)
-
+<br>
 
 **Deployment link:** <br>
 https://hannahcurran.github.io/Concentration-Memory-Game/ 
@@ -44,17 +44,17 @@ I had one week to work independently and complete the project. It was early on w
 
 **Planning:** <br> 
 
-For the project  planning, I used draw.io to design a wireframe, plan and write the pseudo code. This helped to keep all my thoughts and ideas in one place. 
+For the project  planning, I used draw.io to design a wireframe, plan and write the pseudo code. This helped to keep all my thoughts and ideas in one place. <br>
 
 ![wireframe for concentration](https://github.com/hannahcurran/Concentration-Memory-Game/assets/122492241/7dd93fbe-152f-4e2b-87a9-e50489243ad4)
-
+<br>
   
 ![pseudo code for concentration](https://github.com/hannahcurran/Concentration-Memory-Game/assets/122492241/753707a9-e60f-4cfe-b666-f12b14259005)
-
+<br>
 
 
 **Build/Code Process:** <br>
-I've highlighted a few snippets of code from the game which help to show my thinking and how I've implemented it:
+I've highlighted a few snippets of code from the game which help to show my thinking and how I've implemented it:<br>
 
 
 ```
@@ -92,6 +92,7 @@ cardEls.forEach(function (el, index) {
         })
 });
 ```
+<br>
 
 I started out writing this piece of code - it iterates over the collection of card elements (cardEls) using the forEach method. For each card (image), it adds a click event listener. When a card is clicked, the images flip over for the player. This checks if the clicked card's index is the same as the index stored in firstGuess. If they are the same, it exits the function immediately using return. The cards will stay flipped over. <br>
 
@@ -112,6 +113,7 @@ countdownEl.innerHTML = `${time} seconds left`;
 checkWinningCondition();
 }, 1000);
 ```
+<br>
 
 This function adds an event listener onto the button HTML element identified by the variable start. When this button is clicked, the following actions occur:<br>
 The init() function is called which sets up the state for the game (sets timer to 60 seconds, sets the firstGuess to null, matchCounter to 0 and flips all cards back around). <br>
@@ -138,6 +140,7 @@ start.innerHTML = 'Play Again';
 }
 }
 ```
+<br>
 This function checks if the condition for winning the game has been met. The winning condition is met if the matchCounter (which counts the number of matches made by the player) is equal to half the length of the cards array. If all cards have been matched (i.e., if all pairs have been found), the game is won.<br>
 If this winning condition is met, the game timer is stopped (clearInterval(gameTimer)), a congratulatory message is displayed, and a 'Play Again' button is made visible.<br>
 The function also checks whether the game's time limit has been reached (if time is less than or equal to 0).<br>
