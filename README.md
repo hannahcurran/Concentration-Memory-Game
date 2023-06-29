@@ -105,13 +105,19 @@ If the values of the two cards are not the same, it means the cards are not a ma
 
 ```
 start.addEventListener('click', function () {
-init();
-start.style.visibility = 'hidden';
-gameTimer = setInterval(function () {
-time--;
-countdownEl.innerHTML = `${time} seconds left`;
-checkWinningCondition();
-}, 1000);
+        init();
+        start.style.visibility = 'hidden';
+        gameTimer = setInterval(function () {
+                time--;
+                countdownEl.innerHTML = `${time} seconds left`;
+                checkWinningCondition();
+        }, 1000);
+        themeTune.play();
+        setTimeout(function () {
+               themeTune.currentTime = 0;
+        });
+
+})
 ```
 <br>
 
@@ -122,29 +128,34 @@ A timer is set up to call a function every 1000 milliseconds, or every second. T
 ☐ Decrements the time variable by one.<br>
 ☐ Updates an HTML element identified by countdownEl to display the remaining time in seconds.<br>
 ☐ Calls a function checkWinningCondition() which checks if the winning condition for the game has been met (all pairs matched).<br>
+☐ The X-files theme tune will begin to play.<br>
 
 
 ```
 function checkWinningCondition() {
-if (matchCounter === cards.length / 2) {
-clearInterval(gameTimer)
-countdownEl.innerHTML = "Congratulations! You matched them all!";
-start.style.visibility = 'visible';
-start.innerHTML = 'Play Again';
-}
-if (time <= 0) {
-clearInterval(gameTimer);
-countdownEl.innerHTML = "Time's up! The truth is still out there...";
-start.style.visibility = 'visible';
-start.innerHTML = 'Play Again';
-}
-}
+        if (matchCounter === cards.length / 2) {
+                clearInterval(gameTimer)
+                countdownEl.innerHTML = "Congratulations! You matched them all!";
+                themeTune.pause();
+                themeTune.currentTime = 0; 
+                start.style.visibility = 'visible';
+                start.innerHTML = 'Play Again';
+        }
+        if (time <= 0) {
+                clearInterval(gameTimer);
+                countdownEl.innerHTML = "Time's up! The truth is still out there...";
+                themeTune.pause();
+                themeTune.currentTime = 0;
+                start.style.visibility = 'visible';
+                start.innerHTML = 'Play Again';
+        }
 ```
 <br>
 This function checks if the condition for winning the game has been met. The winning condition is met if the matchCounter (which counts the number of matches made by the player) is equal to half the length of the cards array. If all cards have been matched (i.e., if all pairs have been found), the game is won.<br>
 If this winning condition is met, the game timer is stopped (clearInterval(gameTimer)), a congratulatory message is displayed, and a 'Play Again' button is made visible.<br>
 The function also checks whether the game's time limit has been reached (if time is less than or equal to 0).<br>
 If time is up, the game timer is stopped, a "Time's up" message is displayed, and a 'Play Again' button is made visible, similar to the actions performed when the winning condition is met.<br>
+The themeTune will also pause and the sound will stop playing if there is a winner or if the timer runs out and the game is lost. 
 
 
 
@@ -160,8 +171,9 @@ Overall, it’s been a positive experience for my first project - I’m feeling 
 
 **Future Improvements:** <br>
 If I had a bit more time, there’s some additional features I’d like to have including: <br>
-☐ The X-files theme tune to play as the timer countdown;<br>
+☐ To have the option for two players to compete and take turns at flippung cards. <br>
+☐ To have the option for easier and harder levels with varying numbers of images to pair. <br>
+☐ The theme tune to fade out at the end rather than aqbruptly end. <br>
 ☐ Sound effects when there is a ‘match’ or ‘wrong’ turn;<br>
-☐ CSS animation on the images to have them floating around or some movement rather than being still on the page;<br>
-☐ To have the option for two players to compete. 
+
 
