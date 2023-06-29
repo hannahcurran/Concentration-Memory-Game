@@ -98,15 +98,15 @@ start.addEventListener('click', function () {
 function checkWinningCondition() {
         if (matchCounter === cards.length / 2) {
                 clearInterval(gameTimer)
-                countdownEl.innerHTML = "Congratulations! You matched all the cards!";
+                countdownEl.innerHTML = "Congratulations! You matched them all!";
                 start.style.visibility = 'visible';
-                start.innerHTML = 'Play Again!';
+                start.innerHTML = 'Play Again';
         }
         if (time <= 0) {
                 clearInterval(gameTimer);
                 countdownEl.innerHTML = "Time's up! The truth is still out there...";
                 start.style.visibility = 'visible';
-                start.innerHTML = 'Play Again!';
+                start.innerHTML = 'Play Again';
         }
 }
 

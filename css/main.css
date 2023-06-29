@@ -1,11 +1,12 @@
 * {
   box-sizing: border-box;
-
   text-align: center;
-  color: grey;
+  color: black;
   margin: 0;
   padding:0;
-  font-family: 'Special Elite', 
+  font-family: 'Special Elite', cursive;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -23,29 +24,21 @@ section {
 
 h1 {
   /* margin: 25px; */
+  padding:1vmin;
   font-size: 60px;
-}
+  height: 8vh;}
 
 h2 {
+  padding:1vmin;
   font-size: 30px;
-  color: darkgrey;
-  max-height: 20vh;
+  color: black;
+  height: 5vh;
 }
 
-/* #timer {
-    font-size:4vmin;
-    color: lightcoral;  
-    height:10vmin;
-    width: 10vmin;
-    border: 0.5vmin solid lightcoral;
-    border-radius: 50%;
-    font-size:2vmin;
-    color: white;  
-    background-color: lightgrey;
-   
-         
-  } */
-
+h3{
+  height: 3vh;
+  padding: 5vmin;
+}
 
 .cards {
   display: grid;
@@ -53,32 +46,28 @@ h2 {
   gap: 20px;
   grid-template-rows: repeat(3, 1fr);
   justify-items: center;
-  /* width: 100vh; */
-  /* border: lightcoral solid 0.5vmin; */
-  /* background:lightgrey; */
-  padding: 20px;
+   padding: 20px;
   /* animation-name: floating;
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out; */
   
-
-
 }
 
 button {
   padding: 4px;
   margin: 15px;
-  border: lightcoral solid;
+  border: darkslategrey solid;
+  background-color: lightgrey;
   width: 10vmin;
-  height: 6vmin;
+  height: 5.5vmin;
   font-size: 20px;
 }
 
-button:hover {
-  color: white;
-  background-color: lightcoral;
-  border: grey solid;
+#start:hover {
+  color: black;
+  background-color: grey;
+  border: darkslategrey solid;
 }
 
 footer {
