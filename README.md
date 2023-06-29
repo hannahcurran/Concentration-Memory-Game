@@ -175,5 +175,6 @@ If I had a bit more time, there’s some additional features I’d like to have 
 ☐ To have the option for easier and harder levels with varying numbers of images to pair. <br>
 ☐ The theme tune to fade out at the end rather than aqbruptly end. <br>
 ☐ Sound effects when there is a ‘match’ or ‘wrong’ turn;<br>
+☐ Ensure it was more compatible and functioned well on a phone screeen.<br> 
 
 
