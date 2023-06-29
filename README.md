@@ -17,7 +17,7 @@ All you need to play is a web browser and internet connectivity!
 
 
 Timeframe: 
-I had one week to work independently and complete the project. It was early on within the SEI course and felt like a quick jump into planning and building a game solo. 
+I had one week to work independently and complete the project. It was early on within the SEI bootcamp and felt like a quick jump into planning and building a game solo. 
 
 
 Technologies Used:
@@ -136,4 +136,20 @@ This function checks if the condition for winning the game has been met. The win
 If this winning condition is met, the game timer is stopped (clearInterval(gameTimer)), a congratulatory message is displayed, and a 'Play Again' button is made visible.
 The function also checks whether the game's time limit has been reached (if time is less than or equal to 0).
 If time is up, the game timer is stopped, a "Time's up" message is displayed, and a 'Play Again' button is made visible, similar to the actions performed when the winning condition is met.
+
+
+Wins:
+The game works(!), I’ve met the project requirements and the game has a fun theme. I also think I’ve managed to keep the code relatively concise and DRY.
+
+
+Key Learnings/Takeaways: 
+Overall, it’s been a positive experience for my first project - I’m feeling more confident with JavaScript and I’ve been developing key skills in effective questions and researching to overcome obstacles along the way. 
+
+
+Future Improvements:
+If I had a bit more time, there’s some additional features I’d like to have including: 
+☐ The X-files theme tune to play as the timer countdown;
+☐ Sound effects when there is a ‘match’ or ‘wrong’ turn;
+☐ CSS animation on the images to have them floating around or some movement rather than being still on the page;
+☐ To have the option for two players to compete. 
 
