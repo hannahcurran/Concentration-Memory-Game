@@ -1,36 +1,38 @@
 * {
-    box-sizing: border-box;
-    font-family: 'Josefin Sans', sans-serif;
-    text-align:center;
-    color:grey;
-      
-         }
-  
-  body {
-    height: 100vh;
-    background-image: url(/css/card-library/images/UFO.jpg);
-    background-size:cover;
-         }
+  box-sizing: border-box;
 
-  section{
-    display: grid;
-    grid-template-rows: 1fr, 1fr, 1fr, 1fr;
-    margin: 20px; 
-    justify-items: center;
-  }
+  text-align: center;
+  color: grey;
+  margin: 0;
+  padding:0;
+  font-family: 'Special Elite', 
+}
 
-   h1 {
-    /* margin: 25px; */
-    font-size:60px;
-     }
+body {
+  height: 100vh;
+  background-image: url(/css/card-library/images/ufoBackground.jpg);
+  background-size: cover;
+}
 
-  h2{
-   font-size: 30px;
-   color: darkgrey;
-   max-height:20vh;
-  }
- 
-  /* #timer {
+section {
+  display: grid;
+  grid-template-rows: 1fr, 1fr, 1fr, 1fr;
+  margin: 20px;
+  justify-items: center;
+}
+
+h1 {
+  /* margin: 25px; */
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 30px;
+  color: darkgrey;
+  max-height: 20vh;
+}
+
+/* #timer {
     font-size:4vmin;
     color: lightcoral;  
     height:10vmin;
@@ -49,23 +51,28 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  grid-template-rows: repeat( 3, 1fr);
-  justify-items:center;
-  width: 100%;
-  border: lightcoral solid 0.5vmin;
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  /* width: 100vh; */
+  /* border: lightcoral solid 0.5vmin; */
   /* background:lightgrey; */
   padding: 20px;
+  /* animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out; */
+  
 
-    
- }
 
- button{
+}
+
+button {
   padding: 4px;
   margin: 15px;
   border: lightcoral solid;
   width: 10vmin;
   height: 6vmin;
-  font-size:20px;
+  font-size: 20px;
 }
 
 button:hover {
@@ -78,6 +85,6 @@ footer {
   /* margin: 100px; */
   padding: 50px;
   text-align: center;
-  font-size: 15px;
-  color:darkslategrey;
+  font-size: 12px;
+  color: lightgrey;
 }

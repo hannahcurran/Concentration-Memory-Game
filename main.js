@@ -1,34 +1,35 @@
 const cards = [
-        { value: '2', image: 'css/card-library/images/diamonds/diamonds-r02.svg' },
-        { value: '3', image: 'css/card-library/images/diamonds/diamonds-r03.svg' },
-        { value: 'Queen', image: 'css/card-library/images/diamonds/diamonds-Q.svg' },
-        { value: '4', image: 'css/card-library/images/diamonds/diamonds-r04.svg' },
-        { value: '2', image: 'css/card-library/images/diamonds/diamonds-r02.svg' },
-        { value: '5', image: 'css/card-library/images/diamonds/diamonds-r05.svg' },
-        { value: 'King', image: 'css/card-library/images/diamonds/diamonds-K.svg' },
-        { value: 'Ace', image: 'css/card-library/images/diamonds/diamonds-A.svg' },
-        { value: '5', image: 'css/card-library/images/diamonds/diamonds-r05.svg' },
-        { value: '4', image: 'css/card-library/images/diamonds/diamonds-r04.svg' },
-        { value: 'Queen', image: 'css/card-library/images/diamonds/diamonds-Q.svg' },
-        { value: '6', image: 'css/card-library/images/diamonds/diamonds-r06.svg' },
-        { value: '3', image: 'css/card-library/images/diamonds/diamonds-r03.svg' },
-        { value: 'King', image: 'css/card-library/images/diamonds/diamonds-K.svg' },
-        { value: '6', image: 'css/card-library/images/diamonds/diamonds-r06.svg' },
-        { value: 'Ace', image: 'css/card-library/images/diamonds/diamonds-A.svg' },
+        { value: 'hand', image: 'css/card-library/images/hand.jpg' },
+        { value: 'hand', image: 'css/card-library/images/hand.jpg' },
+        { value: 'X', image: 'css/card-library/images/Xfiles.png' },
+        { value: 'X', image: 'css/card-library/images/Xfiles.png' },
+        { value: 'mulderScully', image: 'css/card-library/images/mulderAndScully.png' },
+        { value: 'mulderScully', image: 'css/card-library/images/mulderAndScully.png' },
+        { value: 'alienFace', image: 'css/card-library/images/alienFace.jpg' },
+        { value: 'alienFace', image: 'css/card-library/images/alienFace.jpg' },
+        { value: 'face', image: 'css/card-library/images/face.jpg' },
+        { value: 'face', image: 'css/card-library/images/face.jpg' },
+        { value: 'scullyBook', image: 'css/card-library/images/scullyBook.jpg' },
+        { value: 'scullyBook', image: 'css/card-library/images/scullyBook.jpg' },
+        { value: 'redAlien', image: 'css/card-library/images/redAlien.jpg' },
+        { value: 'redAlien', image: 'css/card-library/images/redAlien.jpg' },
+        { value: 'scullyFace', image: 'css/card-library/images/scullyFace.jpg' },
+        { value: 'scullyFace', image: 'css/card-library/images/scullyFace.jpg' },
+
+
 ]
 
-
+//constant variables
 const cardEls = document.querySelectorAll('.card');
 const messageEl = document.querySelector('h2');
 const countdownEl = document.getElementById('timer');
 const start = document.getElementById('start');
 
 //getting cards to flip over and identify if they match
-let time; 
+let time;
 let firstGuess;
 let matchCounter;
 let gameTimer;
-
 
 init();
 
@@ -56,8 +57,8 @@ cardEls.forEach(function (el, index) {
                         } else {
                                 messageEl.innerText = 'Wrong - try again!';
                                 setTimeout(function () {
-                                        cardEls[firstGuess].setAttribute('src', 'css/card-library/images/red.svg');
-                                        cardEls[index].setAttribute('src', 'css/card-library/images/red.svg');
+                                        cardEls[firstGuess].setAttribute('src', 'css/card-library/images/spaceship.jpg');
+                                        cardEls[index].setAttribute('src', 'css/card-library/images/spaceship.jpg');
                                         messageEl.innerText = '';
                                         firstGuess = null;
                                 }, 1000 * 0.75);//turn both cards back if not a match
@@ -74,7 +75,7 @@ function init() {
         firstGuess = null;
         matchCounter = 0;
 
-        cardEls.forEach((card) => card.setAttribute('src', 'css/card-library/images/red.svg'));
+        cardEls.forEach((card) => card.setAttribute('src', 'css/card-library/images/spaceship.jpg'));
         shuffle(cards);
 }
 
@@ -103,7 +104,7 @@ function checkWinningCondition() {
         }
         if (time <= 0) {
                 clearInterval(gameTimer);
-                countdownEl.innerHTML = "Time's up! Better luck next time.";
+                countdownEl.innerHTML = "Time's up! The truth is still out there...";
                 start.style.visibility = 'visible';
                 start.innerHTML = 'Play Again!';
         }
