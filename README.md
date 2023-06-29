@@ -1,11 +1,13 @@
-**Project Concentration**
+**Project: X-Files Concentration**<br>
+
+![screenshot of concentration](https://github.com/hannahcurran/Concentration-Memory-Game/assets/122492241/1d9ef73e-5961-4553-851d-28d0bca0856f)
+<br>
 
 **How this game works:** <br>
 Concentration is a memory game where images are hidden and during each turn the player is able to flip over two images. If the player flips over two matching images then the images remain visible. <br>Otherwise, the images will flip back over again and be hidden. <br>
 There is a game board with sixteen X-files themed images arranged randomly in a grid face down. The images consist of eight matching pairs.The object of the game is to flip over all of the pairs of matching images before the 60 second timer runs out. <br>
 
-![screenshot of concentration](https://github.com/hannahcurran/Concentration-Memory-Game/assets/122492241/1d9ef73e-5961-4553-851d-28d0bca0856f)
-<br>
+![screenshot of game win](https://github.com/hannahcurran/Concentration-Memory-Game/assets/122492241/7de67ca4-b3c0-4e2f-8f43-7e776a1ccd63) <br>
 
 **Deployment link:** <br>
 https://hannahcurran.github.io/Concentration-Memory-Game/ 
@@ -53,13 +55,16 @@ For the project  planning, I used draw.io to design a wireframe, plan and write 
 <br>
 
 
-**Build/Code Process:** <br>
+**Build/Code Process**: <br>
 I've highlighted a few snippets of code from the game which help to show my thinking and how I've implemented it:<br>
 
 
 ```
 cardEls.forEach(function (el, index) {
         el.addEventListener('click', function () {
+                if (matchCounter === cards.length/2 || time <=0){
+                        return;
+                }
                 if (index === firstGuess) {
                         return; 
                 };
@@ -94,7 +99,7 @@ cardEls.forEach(function (el, index) {
 ```
 <br>
 
-I started out writing this piece of code - it iterates over the collection of card elements (cardEls) using the forEach method. For each card (image), it adds a click event listener. When a card is clicked, the images flip over for the player. This checks if the clicked card's index is the same as the index stored in firstGuess. If they are the same, it exits the function immediately using return. The cards will stay flipped over. <br>
+I started out writing this piece of code - it iterates over the collection of card elements (cardEls) using the forEach method. For each card (image), it adds a click event listener. When a card is clicked, it checks to see if the game has already been won or if the time has already lapsed, to prevent cards being flipped after the game is over. Otherwise, when a card is clicked, the images flip over for the player. This checks if the clicked card's index is the same as the index stored in firstGuess. If they are the same, it exits the function immediately using return. The cards will stay flipped over. <br>
 
 It gets the card object (clickedCard) associated with the clicked card's index from the cards array and sets the src attribute of the clicked card element to the image of the clickedCard. If firstGuess is null, it means this is the first card clicked in this turn. So, it stores the index of the clicked card in firstGuess for comparison with the next clicked card.<br>
 
@@ -159,17 +164,16 @@ The themeTune will also pause and the sound will stop playing if there is a winn
 
 
 
-**Wins:**<br>
+**Wins**:<br>
 The game works(!), I’ve met the project requirements and the game has a fun theme. I also think I’ve managed to keep the code relatively concise and DRY.<br>
 
 
-
-**Key Learnings/Takeaways:** <br>
-Overall, it’s been a positive experience for my first project - I’m feeling more confident with JavaScript and I’ve been developing key skills in effective questions and researching to overcome obstacles along the way. 
-
+**Challenges**:<br>
+I think I've been able to successfully meet the requirements from the project brief, however, I would have liked to added further functions and features if I'd had a bit more time.<br>
 
 
-**Future Improvements:** <br>
+
+**Future Improvements**: <br>
 If I had a bit more time, there’s some additional features I’d like to have including: <br>
 ☐ To have the option for two players to compete and take turns at flippung cards. <br>
 ☐ To have the option for easier and harder levels with varying numbers of images to pair. <br>
@@ -177,4 +181,6 @@ If I had a bit more time, there’s some additional features I’d like to have 
 ☐ Sound effects when there is a ‘match’ or ‘wrong’ turn;<br>
 ☐ Ensure it was more compatible and functioned well on a phone screeen.<br> 
 
+**Key Learnings/Takeaways:** <br>
+Overall, it’s been a positive experience for my first project - I’m feeling more confident with JavaScript and I’ve been developing key skills in effective questions and researching to overcome obstacles along the way. 
 
