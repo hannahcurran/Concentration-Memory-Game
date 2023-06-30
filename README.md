@@ -175,7 +175,7 @@ I think I've been able to successfully meet the requirements from the project br
 
 **Future Improvements**: <br>
 If I had a bit more time, there’s some additional features I’d like to have including: <br>
-☐ To have the option for two players to compete and take turns at flippung cards. <br>
+☐ To have the option for two players to compete and take turns at flipping cards. <br>
 ☐ To have the option for easier and harder levels with varying numbers of images to pair. <br>
 ☐ The theme tune to fade out at the end rather than aqbruptly end. <br>
 ☐ Sound effects when there is a ‘match’ or ‘wrong’ turn;<br>
