@@ -13,11 +13,9 @@
   0% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-10px);
   }
-
   100% {
     transform: translateY(0);
   }
@@ -84,7 +82,6 @@ button {
 
 footer {
   padding: 3vmin;
-  ;
   text-align: center;
   font-size: 12px;
   color: lightgrey;
