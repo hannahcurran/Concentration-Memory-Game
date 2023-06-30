@@ -49,9 +49,10 @@ h2 {
   height: 5vh;
 }
 
-h3 {
+#timer {
   height: 3vh;
   padding: 3vmin;
+  font-size: 25px;
 }
 
 .cards {

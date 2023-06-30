@@ -96,7 +96,7 @@ start.addEventListener('click', function () {
 function checkWinningCondition() {
         if (matchCounter === cards.length / 2) {
                 clearInterval(gameTimer)
-                countdownEl.innerHTML = "Congratulations! You matched them all!";
+                countdownEl.innerHTML = "Winner!";
                 themeTune.pause();
                 themeTune.currentTime = 0;
                 start.style.visibility = 'visible';
