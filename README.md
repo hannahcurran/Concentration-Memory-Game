@@ -177,9 +177,9 @@ I think I've been able to successfully meet the requirements from the project br
 If I had a bit more time, there’s some additional features I’d like to have including: <br>
 ☐ To have the option for two players to compete and take turns at flipping cards. <br>
 ☐ To have the option for easier and harder levels with varying numbers of images to pair. <br>
-☐ The theme tune to fade out at the end rather than aqbruptly end. <br>
-☐ Sound effects when there is a ‘match’ or ‘wrong’ turn;<br>
-☐ Ensure it was more compatible and functioned well on a phone screeen.<br> 
+☐ The theme tune to fade out at the end rather than abruptly end. <br>
+☐ Sound effects when there is a ‘match’ or ‘wrong’ turn.<br>
+☐ Ensure it was more compatible and functioned well on a phone screen.<br> 
 
 **Key Learnings/Takeaways:** <br>
 Overall, it’s been a positive experience for my first project - I’m feeling more confident with JavaScript and I’ve been developing key skills in effective questions and researching to overcome obstacles along the way. 
