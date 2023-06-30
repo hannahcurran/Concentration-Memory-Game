@@ -9,6 +9,19 @@
   max-width: 100%;
 }
 
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
 
 body {
   height: 100vh;
@@ -48,6 +61,7 @@ h3 {
   grid-template-rows: repeat(3, 1fr);
   justify-items: center;
   padding: 20px;
+  animation: floatUpDown 3s ease-in-out infinite;
 }
 
 button {
@@ -58,6 +72,7 @@ button {
   width: 10vmin;
   height: 5.5vmin;
   font-size: 15px;
+  animation: floatUpDown 3s ease-in-out infinite;
 }
 
 #start:hover {
@@ -67,7 +82,8 @@ button {
 }
 
 footer {
-  padding: 3vmin;;
+  padding: 3vmin;
+  ;
   text-align: center;
   font-size: 12px;
   color: lightgrey;

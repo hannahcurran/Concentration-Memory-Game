@@ -22,6 +22,7 @@ const cardEls = document.querySelectorAll('.card');
 const messageEl = document.querySelector('h2');
 const countdownEl = document.getElementById('timer');
 const start = document.getElementById('start');
+const themeTune = document.getElementById('themeTune');
 
 let time;
 let firstGuess;
@@ -32,8 +33,11 @@ init();
 //to get cards to flip over and identify if they match:
 cardEls.forEach(function (el, index) {
         el.addEventListener('click', function () {
+                if (matchCounter === cards.length / 2 || time <= 0) {
+                        return; // stop execution and don't allow cards to be clicked if the game has been won or time has lapsed
+                }
                 if (index === firstGuess) {
-                        return; 
+                        return;
                 };
 
                 let clickedCard = cards[index];
@@ -43,11 +47,11 @@ cardEls.forEach(function (el, index) {
                         firstGuess = index;
                 } else {
                         if (cards[firstGuess].value === cards[index].value) {
-                                matchCounter += 1; 
+                                matchCounter += 1;
                                 messageEl.innerText = 'Match!';
                                 setTimeout(function () {
                                         messageEl.innerText = '';
-                                }, 1000 * 0.75); 
+                                }, 1000 * 0.75);
                                 firstGuess = null; //keep matched cards flipped over and re-set for next turn
                                 checkWinningCondition();
 
@@ -67,7 +71,7 @@ cardEls.forEach(function (el, index) {
 //functions
 
 function init() {
-        time = 60; 
+        time = 60;
         firstGuess = null;
         matchCounter = 0;
         cardEls.forEach((card) => card.setAttribute('src', 'css/card-library/images/spaceship.jpg'));
@@ -76,12 +80,16 @@ function init() {
 //play button which begins countdown
 start.addEventListener('click', function () {
         init();
-        start.style.visibility = 'hidden'; 
+        start.style.visibility = 'hidden';
         gameTimer = setInterval(function () {
                 time--;
-                countdownEl.innerHTML = `${time} seconds left`; 
+                countdownEl.innerHTML = `${time} seconds left`;
                 checkWinningCondition();
         }, 1000);
+        themeTune.play();
+        setTimeout(function () {
+                themeTune.currentTime = 0;
+        });
 
 })
 
@@ -89,12 +97,16 @@ function checkWinningCondition() {
         if (matchCounter === cards.length / 2) {
                 clearInterval(gameTimer)
                 countdownEl.innerHTML = "Congratulations! You matched them all!";
+                themeTune.pause();
+                themeTune.currentTime = 0;
                 start.style.visibility = 'visible';
                 start.innerHTML = 'Play Again';
         }
         if (time <= 0) {
                 clearInterval(gameTimer);
                 countdownEl.innerHTML = "Time's up! The truth is still out there...";
+                themeTune.pause();
+                themeTune.currentTime = 0;
                 start.style.visibility = 'visible';
                 start.innerHTML = 'Play Again';
         }
