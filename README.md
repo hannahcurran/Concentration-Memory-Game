@@ -160,7 +160,7 @@ This function checks if the condition for winning the game has been met. The win
 If this winning condition is met, the game timer is stopped (clearInterval(gameTimer)), a congratulatory message is displayed, and a 'Play Again' button is made visible.<br>
 The function also checks whether the game's time limit has been reached (if time is less than or equal to 0).<br>
 If time is up, the game timer is stopped, a "Time's up" message is displayed, and a 'Play Again' button is made visible, similar to the actions performed when the winning condition is met.<br>
-The themeTune will also pause and the sound will stop playing if there is a winner or if the timer runs out and the game is lost. 
+The themeTune will also pause and the sound will stop playing if there is a winner or if the timer runs out and the game is lost. <br>
 
 
 
